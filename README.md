@@ -29,30 +29,55 @@ Points from the course
 5. ec2 instance will have two users by deafult -> es2-user and root user.
 6. To setup all the files, we need to be on the root user
 7. below command is used for logging into root user.
+
    sudo su -
+
 8. To see hidden files. ls -a
 9. To keep our Developed App running on server and access it from anywhere, we should first build the code so that build files will be generated. These build files should be placed into App/Web Server And then we can access the developed App directly on the browser with HostedServerIpAddress :portNumber or with Domain Name if mapped.
 10. First Yum Tool needs to be installed on the root user.
+
     **Yum Tool** Yum is a command line tool used for getting, installing, deleting, querying and managing software packages.
+
     **Command used** sudo yum install yum
+
 11. Next we need to install java on the ec2 istance.
+
     **Command used** su -c "yum install java-[version]
+
 12. Java is installed in usr/lib directory
+
     Set Java Home Path in Bash profile
+
     JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.51.amzn1.x86_64
+
     PATH=$PATH:$HOME/bin:$JAVA_HOME:
+
 13. Next install Maven on the ec2 instance.
+
     **wget-** Wget solely lets you download files from an HTTP/HTTPS or FTP server. You give it a link and it automatically downloads the file where the link points to. It basically helps to download Binaries
+
     wget <downloadlinkofMaven>
+
     tar xzvf <mavenfoldername>
+
     M2=/opt/apache-maven-3.6.3/bin
+
     PATH=$PATH:$HOME/bin:$JAVA_HOME:$MAVEN_HOME:$M2
+
     Set Maven in System variables
+
     JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.51.amzn1.x86_64
+
     MAVEN_HOME=/opt/apache-maven-3.6.3
+
 14. Then finally install Jenkins for Continuous Integration.
+
     • sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
+
     • sudo rpm --import http://pkg.jenkins.io/redhat/jenkins.io.key
+
     • sudo yum install jenkins
+
     • Start Jenkins - sudo service jenkins start/stop/restart
+
     • sudo chkconfig jenkins on
