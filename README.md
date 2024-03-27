@@ -56,9 +56,9 @@ Points from the course
 
     **wget-** Wget solely lets you download files from an HTTP/HTTPS or FTP server. You give it a link and it automatically downloads the file where the link points to. It basically helps to download Binaries
 
-    wget <downloadlinkofMaven>
+    wget **<downloadlinkofMaven>**
 
-    tar xzvf <mavenfoldername>
+    tar xzvf **<mavenfoldername>**
 
     M2=/opt/apache-maven-3.6.3/bin
 
